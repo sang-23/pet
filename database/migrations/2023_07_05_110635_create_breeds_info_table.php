@@ -11,9 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('vendors-info', function (Blueprint $table) {
-            $table->id();
-           
+        Schema::create('breeds_info', function (Blueprint $table) {
+            $table->id('breed_id');
+            $table->unsignedBigInteger('pet_typesid')->nullable();
+            $table->foreign('pet_typesid')->references('pet_typeid')->on('pets_category');
+            $table->string('breed_name',100);
+
+         
             $table->timestamps();
         });
     }
@@ -23,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('breeds_info');
     }
 };
