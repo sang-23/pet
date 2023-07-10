@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PetData;
+use App\Http\Controllers\CustomerData;
+use Carbon\Carbon;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('vendor', [PetData::class,'index','calculateWeeks','notify']);
+
+// Route::get('vendor', [PetData::class,'show']);
+  
