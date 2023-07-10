@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\AuthController;
 
 use App\Http\Controllers\FormDataController;
@@ -8,6 +9,9 @@ use App\Http\Controllers\VenderController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\generalController;
 use App\Http\Controllers\placeController;
+use App\Http\Controllers\PetData;
+use App\Http\Controllers\CustomerData;
+use Carbon\Carbon;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -60,4 +64,10 @@ Route::put('profile', [ProfileController::class, 'update'])->name('profile.updat
 
 // for states and countries
 Route::get('/cities/{state}', 'placeController@getCities')->name('getCities');
+
+
+Route::get('vendor', [PetData::class,'index','calculateWeeks','notify']);
+
+// Route::get('vendor', [PetData::class,'show']);
+  
 
