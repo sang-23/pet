@@ -12,6 +12,7 @@ use App\Http\Controllers\placeController;
 use App\Http\Controllers\PetData;
 use App\Http\Controllers\CustomerData;
 use Carbon\Carbon;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,10 +24,12 @@ use Carbon\Carbon;
 |
 */
 Route::get('/', function () {
+
     return view('welcomenew');
 });
 Route::get('/form', function () {
     return view('form');
+
 });
 
 
