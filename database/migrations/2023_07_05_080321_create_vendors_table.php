@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('vendors', function (Blueprint $table) {
             $table->id('vendors_id');
+            $table->unsignedBigInteger('userven_id')->unique();
+            $table->foreign('userven_id')->references('user_id')->on('users')->onDelete('cascade');
             $table->string('vendors_fname',100);
             $table->string('vendors_lname',100);
             $table->string('vendors_uname',100);
@@ -24,7 +26,7 @@ return new class extends Migration
             $table->string('vendors_city',100);
             $table->string('vendors_state',100);
             $table->bigInteger('vendors_phone');
-            $table->binary('vendors_avatar');
+            $table->binary('vendors_avatar')->nullable();
 
             $table->timestamps();
         });
