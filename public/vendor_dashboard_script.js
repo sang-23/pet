@@ -42,6 +42,8 @@ $('.inputFormClass').on('submit', function (e) {
     var petType = $("#pet-type").val();
     var petName = $("#PetName").val();
     var remainingWeeks = $("#RemainingWeeks").val();
+    var markup = "<tr class='clickable-row' data-bs-toggle='modal' data-bs-target='#kt_modal_scrollable_2'><td>  <div class='d-flex align-items-center'> <div class='dataColumnOne'><a href='#'><p class='customerName mb-0'>"+ name +"</p></a><p class='customerEmail mb-0'>"+ email +"</p></div></div></td><td>" + contactNo + "</td><td>" + petType + "</td><td>"+ petName +"</td><td>" + remainingWeeks + "</td></tr>";
+
     var markup = "<tr><td>  <div class='d-flex align-items-center'> <div class='dataColumnOne'><a href='#'><p class='customerName mb-0'>"+ name +"</p></a><p class='customerEmail mb-0'>"+ email +"</p></div></div></td><td>" + contactNo + "</td><td>" + petType + "</td><td>"+ petName +"</td><td>" + remainingWeeks + "</td></tr>";
 
     $('#myTable').DataTable().row.add($(markup)).draw(false);
@@ -218,6 +220,17 @@ const chartData = {
   
   populateUl();
 
+  $(document).ready(function() {
+    // Click event handler for clickable rows
+    $('.clickable-row').click(function() {
+      // Get the data-target attribute value from the clicked row
+      var target = $(this).data('target');
+  
+      // Open the modal with the specified target
+      $(target).modal('show');
+    });
+  });
+  
 
 
 
