@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PetData;
 use App\Http\Controllers\CustomerData;
 use Carbon\Carbon;
+
+use App\Models\Templates;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,10 +17,17 @@ use Carbon\Carbon;
 |
 */
 
+
+
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('vendor', [PetData::class,'index','calculateWeeks','notify']);
+Route::get('vendor', [PetData::class,'index','calculateWeeks','notify']);;
 
 // Route::get('vendor', [PetData::class,'show']);
+// Route::get('vendor', [TemplateData::class,'showCarousel']);
   
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
