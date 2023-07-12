@@ -5,12 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-
-=======
-use App\Http\Controllers\TemplateData;
-
-class Templates extends Model
+class PetInfo extends Model
 {
     use HasFactory;
-    protected $table='templates';
+    protected $table = 'pet_info';
+    protected $primaryKey = 'pet_id';
 }

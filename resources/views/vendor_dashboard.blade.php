@@ -23,6 +23,7 @@
 
 <body>
 
+
     <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container">
             <a class="navbar-brand" href="./vendorDash.html">
@@ -93,6 +94,7 @@
         </div>
     </nav>
      -->
+
 <header>
     <nav class="navbar  navbar-expand-lg bg-body-tertiary ">
         <div class="container-fluid d-flex justify-content-between">
@@ -132,17 +134,23 @@
                             </a>
                             <ul class="dropdown-menu">
 
-                                <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3 BellScrollspy">
-                                    <a class="navbar-brand" href="#">Notification</a>
+
+                                <nav id="navbar-example2" class="navbar p-2 bg-body-tertiary BellScrollspy">
+                                    <a class="navbar-brand" href="#"><h4 class="notification_heading">Notification</h4></a>
+
                                     <ul class="nav nav-pills">
 
                                         <div data-bs-spy="scroll" data-bs-target="#navbar-example2"
                                             data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true"
-                                            class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+
+                                            class="scrollspy-example bg-body-tertiary rounded-2" tabindex="0">
                                             <div class="notifi-item">
-                                                <div class="text d-flex">
-                                                <p><b>Lorem ipsum</b></p>
-                                                    <p>@lorem ipsum dolor sit amet</p>
+                                                <div class="text">
+                                                <p><b>Owner name:</b>Lorem Ipsummm</p>
+                                                <p><b>Pet name:</b>Lorem Ipsummm</p>
+                                                <p>Due this week</p>
+                                                
+
                                                 </div>
                                             </div>
 
@@ -174,15 +182,18 @@
     </div>
 </nav>
 </header>
+
 <section class="sec1">
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <!-- <div class="bg"></div> -->
             <img src="petBanner2.jpg" class="d-block w-100 caraousalBackgraoundImg" alt="...">
+
           </div>
           <div class="carousel-item">
             <img src="petBanner3.avif" class="d-block w-100 caraousalBackgraoundImg" alt="...">
+
           </div>
           <div class="carousel-item">
             <img src="Petbanner4.jpg" class="d-block w-100 caraousalBackgraoundImg" alt="...">
@@ -197,14 +208,59 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
+
+</section> --}}
+<section class="sec1">
+    {{-- <div class="container">
+        <div class="row"> --}}
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="petBanner2.jpg" class="d-block w-100 caraousalBackgraoundImg" alt="...">
+                        <div class="carousel-caption banner1TextClass">
+                            <h1 class="campaignHeading">Boost Your Business with Targeted Campaigns!</h1>
+                            <h3 style="color: black">Let our Admin drive more customers to your pet store!</h3>
+                            <button type="button" class="btn btn-warning">Run a Campaign Now!</button>
+                        </div>
+                    </div>
+                    <div class="carousel-item ">
+                        <img src="petBanner3.jpg" class="d-block w-100 caraousalBackgraoundImg" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Petbanner4.jpg" class="d-block w-100 caraousalBackgraoundImg" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        {{-- </div>
+    </div> --}}
+   
 </section>
+
+
+
+</section>
+
 
 <section class="sec2">
     <div class="container py-5">
         <div class="row">
           <!-- <div class="col-md-8-sm-12"> -->
             <div class="addCustomerModal">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Add Customer</button>
+
+                {{-- <div class="frame">
+                <button type="button" class="btn custom-btn btn-6" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Add Customer</button>
+            </div> --}}
+
                 <div class="modal fade" id="exampleModal" class="tableModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
@@ -249,10 +305,17 @@
                   </div>
                 </div>
             </div>
-           </div>
+
+         </div>
            <div class="row">
-            <div class="col-lg-12 col-sm-12">
-            <table id="myTable" class="table table-hover responsive nowrap" style="width:100%">
+            <div class="col-lg-12-md-12-sm-12">
+                <div class="table-responsive-sm">
+                    <div class="frame">
+                        <button type="button" class="btn custom-btn btn-6" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><span>Add Customer</span></button>
+                    </div>
+                
+            <table id="myTable" class="table table-hover nowrap"  style="width:100%">
+
               <thead>
                 <tr>
                   <th>Client Name</th>
@@ -302,6 +365,9 @@
                 </tr>
               </tbody>
             </table>
+
+        </div>
+
             </div>
           </div>
         <!-- </div> -->

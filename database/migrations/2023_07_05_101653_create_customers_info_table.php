@@ -18,9 +18,10 @@ return new class extends Migration
             $table->string('customers_email')->unique();
             $table->bigInteger('customers_phone');
             $table->string('customers_address',200);
-            $table->string('customers_city',100);
+            $table->string('customers_country',100);
+         
             $table->string('customers_state',100);
-            $table->bigInteger('customers_pincode');
+            $table->string('customers_city',100);
             $table->timestamps();
         });
     }
