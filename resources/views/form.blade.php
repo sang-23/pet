@@ -54,25 +54,29 @@
                 <div class="form-row">
 
                     <div class="form-group col-md-4">
-                        <label for="inputState">State:</label>
-                        <select name="state" id="state" class="form-control custom-input" required>
-                            <option value = "">Select state</option>
-                            
+                        <label for="inputState">Country:</label>
+                        <select name="customers_country" id="country" class="form-control custom-input" required>
+                            <option value = "">Select country</option>
+                            @foreach($country as $list)
+				<option value="{{$list->countrys_id}}">{{$list->country}}</option>
+			@endforeach
                         </select>
                     </div>
 
                     <div class="form-group col-md-4">
-                        <label for="inputCity">City:</label>
-                        <select name="city" id="city" class="form-control custom-input" required>
-                            <option value = "" selected>Select city</option>
+                        <label for="inputCity">State:</label>
+                        <select name="customers_state" id="state" class="form-control custom-input" required>
+                            <option value = "">Select state</option>
                           
                         </select>
                     </div>
                    
                     <div class="form-group col-md-4">
-                        <label for="inputZip">Pincode:</label>
-                        <input name="customers_pincode" type="text" class="form-control custom-input" id="inputZip"
-                            placeholder="Pincode" required>
+                        <label for="inputCity">City:</label>
+                        <select name="customers_city" id="city" class="form-control custom-input" required>
+                            <option value = "" selected>Select city</option>
+                          
+                        </select>
                     </div>
                 </div>
                 <hr>
@@ -154,6 +158,28 @@
                                 <select name="breed_name" id="inputBreed" class="form-control custom-input" required>
                                     <option selected></option>
                                     <option> Labrador Retriever</option>
+                                    <option value="">German Shepherd</option>
+                                    <option value="">Golden Retriever</option>
+                                    <option value="">Dachshund</option>
+                                    <option value="">Beagle</option>
+                                    <option value="">Boxer</option>
+                                    <option value="">Tibetan Mastif</option>
+                                    <option value="">Pug</option>
+                                    <option value="">Rottweiler</option>
+                                    <option value="">Doberman</option>
+                                    <option value="">Great Dane</option>
+                                    <option value="">Dalmatian</option>
+                                    <option value="">English Cocker Spaniel
+                                    </option>
+                                    <option value="">Indian Spitz</option>
+                                    <option value="">Bengal</option>
+                                    <option value="">Persian:</option>
+                                    <option value="">Spotted ( Indian Billi )</option>
+                                    <option value="">Bombay:</option>
+                                    <option value="">Himalayan:</option>
+                                    <option value="">Exotic</option>
+                                    <option value="">Maine Coon:</option>
+                                    <option value="">Others</option>
                                 </select>
                             </div>
                         </div>
@@ -177,28 +203,41 @@
         </form>
     </section>
 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <script>
-    $(document).ready(function() {
-        $('#state').change(function() {
-            var state = $(this).val();
-            if (state) {
-                $.ajax({
-                    url: "{{ route('getCities', '') }}/" + state,
-                    type: "GET",
-                    dataType: "json",
-                    success: function(data) {
-                        $('#city').empty().append('<option value="">Select City</option>');
-                        $.each(data, function(key, value) {
-                            $('#city').append('<option value="' + key + '">' + value + '</option>');
-                        });
-                    }
-                });
-            } else {
-                $('#city').empty().append('<option value="">Select City</option>');
-            }
-        });
-    });
+
+
+
+jQuery(document).ready(function(){
+			jQuery('#country').change(function(){
+              
+				let cid=jQuery(this).val();
+				jQuery('#city').html('<option value="">Select City</option>')
+				jQuery.ajax({
+					url:'/getState',
+					type:'post',
+					data:'cid='+cid+'&_token={{csrf_token()}}',
+					success:function(result){
+						jQuery('#state').html(result)
+					}
+				});
+			});
+			
+			jQuery('#state').change(function(){
+				let sid=jQuery(this).val();
+				jQuery.ajax({
+					url:'/getCity',
+					type:'post',
+					data:'sid='+sid+'&_token={{csrf_token()}}',
+					success:function(result){
+						jQuery('#city').html(result)
+					}
+				});
+			});
+			
+		});
 </script>
 </body>
 </html>

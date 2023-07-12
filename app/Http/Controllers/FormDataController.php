@@ -32,9 +32,10 @@ class FormDataController extends Controller
         $customers_info->customers_phone=$request['customers_phone'];
         $customers_info->customers_email=$request['customers_email'];
         $customers_info->customers_address=$request['customers_address'];
+        $customers_info->customers_country=$request['customers_country'];
         $customers_info->customers_city=$request['customers_city'];
         $customers_info->customers_state=$request['customers_state'];
-        $customers_info->customers_pincode=$request['customers_pincode'];
+     
 
         $customers_info->save();
         
