@@ -63,6 +63,7 @@ body{
     height: 300px;
     overflow-y: scroll;
     width: 250px;
+
 }
 .noti_card{
   width: 216px;
@@ -226,10 +227,17 @@ hr{
 
 
 
+
+
+
+}
+
+
 /* caraousal image */
 .caraousalBackgraoundImg{
     opacity: 0.5;
 }
+
 .wwww{
     height: fit-content;
 }
@@ -340,6 +348,10 @@ hr{
   .btn-6 span:hover:after {
     width: 100%;
   }
+
+
+
+
 
 /* Line chart */
 .line-chart-container {
@@ -534,8 +546,12 @@ hr{
   }
   
   table.dataTable {
+
     /* margin-top: 12px !important; */
     margin: 10px 0px !important;
+
+    margin-top: 12px !important;
+
   }
   
   /* .icon > .bx {

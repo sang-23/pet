@@ -44,6 +44,8 @@ $('.inputFormClass').on('submit', function (e) {
     var remainingWeeks = $("#RemainingWeeks").val();
     var markup = "<tr class='clickable-row' data-bs-toggle='modal' data-bs-target='#kt_modal_scrollable_2'><td>  <div class='d-flex align-items-center'> <div class='dataColumnOne'><a href='#'><p class='customerName mb-0'>"+ name +"</p></a><p class='customerEmail mb-0'>"+ email +"</p></div></div></td><td>" + contactNo + "</td><td>" + petType + "</td><td>"+ petName +"</td><td>" + remainingWeeks + "</td></tr>";
 
+    var markup = "<tr><td>  <div class='d-flex align-items-center'> <div class='dataColumnOne'><a href='#'><p class='customerName mb-0'>"+ name +"</p></a><p class='customerEmail mb-0'>"+ email +"</p></div></div></td><td>" + contactNo + "</td><td>" + petType + "</td><td>"+ petName +"</td><td>" + remainingWeeks + "</td></tr>";
+
     $('#myTable').DataTable().row.add($(markup)).draw(false);
 
  
@@ -229,4 +231,73 @@ const chartData = {
     });
   });
   
+
+
+
+
+// // Sample data for pet categories
+// const petsData = {
+//     dogs: 300,
+//     cats: 250,
+//     birds: 150,
+//     lizards: 100,
+//     hamsters: 75,
+//     others: 125,
+//   };
+  
+//   // Function to draw the doughnut chart
+//   function drawDoughnutChart(data) {
+//     const ctx = document.getElementById('doughnut-chart').getContext('2d');
+  
+//     new Chart(ctx, {
+//       type: 'doughnut',
+//       data: {
+//         labels: Object.keys(data),
+//         datasets: [
+//           {
+//             data: Object.values(data),
+//             backgroundColor: [
+//               '#FF6384',
+//               '#36A2EB',
+//               '#FFCE56',
+//               '#8B4A9B',
+//               '#4BC0C0',
+//               '#E7E9ED',
+//             ],
+//           },
+//         ],
+//       },
+//       options: {
+//         responsive: true,
+//         maintainAspectRatio: false,
+//         cutout: '70%',
+//         plugins: {
+//           legend: {
+//             display: false,
+//           },
+//           tooltip: {
+//             callbacks: {
+//               label: function (context) {
+//                 const label = context.label || '';
+//                 const value = context.formattedValue || '';
+  
+//                 return label + ': ' + value;
+//               },
+//             },
+//           },
+//         },
+//       },
+//     });
+//   }
+  
+//   // Fetch the pet data from the Laravel backend (replace with your own endpoint)
+//   fetch('/pets-data')
+//     .then((response) => response.json())
+//     .then((data) => {
+//       // Call the function to draw the doughnut chart with the retrieved data
+//       drawDoughnutChart(data);
+//     })
+//     .catch((error) => {
+//       console.error('Error:', error);
+//     });
   

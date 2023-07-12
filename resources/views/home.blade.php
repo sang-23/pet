@@ -21,3 +21,10 @@
     </div>
 </div>
 @endsection
+
+
+
+<h1>Home : {{ Auth::user()->name }}</h1>
+
+
+@endsection
