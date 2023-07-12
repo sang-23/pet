@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vendor Dash</title>
+
+    <title>Vendor Dashboard</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -89,6 +91,7 @@
                                                 </div>
                                             </div>
 
+
                                             <div class="notifi-item">
                                               <div class="card noti_card">
                                                 <div class="card-body p-2">
@@ -97,6 +100,7 @@
                                                   <div class="dueWeek ">
                                                     <p class="m-0">Due this week</p>
                                                   </div>
+
                                                   
                                                   {{-- <button class="custom-btn btn-16">Read More</button> --}}
                                                 </div>
@@ -180,7 +184,13 @@
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   
   <div class="carousel-inner" data-bs-interval="10000">
-      
+
+      @foreach ($templates as $key => $template)
+          <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+              <img src="{{ 'data:image/jpeg;base64,' . base64_encode($template->templates_image) }}" class="d-block w-100 CarouselPoster" alt="...">
+          </div>
+      @endforeach
+
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -267,12 +277,20 @@
                         </div>
                         <div class="modal-body cat_modal_body">
                             <div class="container container-main">
+
                                 <h1 class="modal_cat_name"></h1>
+=======
+                                <h1 class="modal_cat_name">Juliet</h1>
+
                                 <div class="row">
                                     <div class="col sm-4">
                                         <div class="card card-small">
                                             <div class="card-body">
+
                                                 <h5 class="card-title"></h5>
+=======
+                                                <h5 class="card-title">2 Years</h5>
+
                                                 <p class="card-text text-muted">Age</p>
                                             </div>
                                         </div>
@@ -280,7 +298,11 @@
                                     <div class="col sm-4">
                                         <div class="card card-small">
                                             <div class="card-body">
+
                                                 <h5 class="card-title"></h5>
+=======
+                                                <h5 class="card-title">Female</h5>
+
                                                 <p class="card-text text-muted">Sex</p>
                                             </div>
                                         </div>
@@ -301,6 +323,7 @@
                                         <hr>
                                         <p class="card-text">
                                         <p id="joincat" class="fs-5">Name:</p>
+
                                         <h5 class="joincat">John Doe</h5>
                                         <br>
                                         <p id="joincat" class="fs-5">Contact Number:</p>
@@ -308,6 +331,7 @@
                                         <br>
                                         <p id="joincat" class="fs-5">Email:</p>
                                         <h5 class="joincat">abc@gmail.com</h5>
+                                       
                                         </p>
                                     </div>
                                 </div>
@@ -343,7 +367,7 @@
 
             {{-- dog modal code start --}}
             <div class="modal fade" tabindex="-1" id="kt_modal_scrollable_3">
-            
+
               <div class="modal-dialog modal-dialog-scrollable">
                   <div class="modal-content">
                       <div class="modal-title">
@@ -351,16 +375,24 @@
                           <img src="Colorful and Bright 3D Elements Printable Learning Module Schedule Planner (2).png"
                               class="img-fluid" alt="...">
                       </div>
+
                     
                       <div class="modal-body dog_modal_body">
                        
                           <div class="container container-main">
                               <h1 class="modal_dog_name"></h1>
+
+
+
                               <div class="row">
                                   <div class="col sm-4">
                                       <div class="card card-small">
                                           <div class="card-body">
+
                                             <h5 class="card-title"></h5>
+
+                                            
+
                                               <p class="card-text text-muted">Age</p>
                                           </div>
                                       </div>
@@ -369,6 +401,9 @@
                                       <div class="card card-small">
                                           <div class="card-body">
                                               <h5 class="card-title"></h5>
+
+                                   
+
                                               <p class="card-text text-muted">Sex</p>
                                           </div>
                                       </div>
@@ -384,13 +419,18 @@
                               </div>
       
                               <div class="card card-profile-dog">
+
                                 
                                   <div class="card-body">
                                    
+
+                                 
+
                                       <h4 class="card-title text-center">Parent Profile</h4>
                                       <hr>
                                       <p class="card-text">
                                       <p id="joindog" class="fs-5">Name:</p>
+
                                       <h5 id="joindog" class = "joindog"></h5>
                                       <br>
                                       <p id="joindog" class="fs-5">Contact Number:</p>
@@ -401,6 +441,7 @@
                                       </p>
                                   </div>
                                  
+
                               </div>
                               <div class="card card-profile-dog">
                                   <div class="card-body">
@@ -437,6 +478,7 @@
                       </div>
                   </div>
               </div>
+
           
           </div>
             {{-- dog modal code end --}}
@@ -444,70 +486,61 @@
 
 
 
+
                 <div class="table-responsive-sm">
-                  <table id="myTable" class="table table-hover nowrap"  style="width:100%">
-                    <thead>
-                      <tr>
-                        <th>Client Name</th>
-                        <th>Phone Number</th>
-                        <th>Pet Type</th>
-                        <th>Pet Name</th>
-                        <th>Vaccination Period</th>
-                        <th style="display: none">Gender</th>
-                        <th style="display: none">Age</th>
-                        <th style="display: none">Breed</th>
-                     
-                      </tr>
-                    </thead>
-                    <tbody>
-                      @foreach($pet_info as $pet)
-                    <tr class="clickable-row" data-bs-toggle="modal" data-bs-target="<?php echo $pet->pet_type_id == 1 ? '#kt_modal_scrollable_3' : '#kt_modal_scrollable_2'; ?>" data-pet-id="{{ $pet->id }}">
-      
-                            <td>
-                              <a href="#">
-                                <div class="d-flex align-items-center">
-                                  <div class="avatar avatar-blue mr-3">EB</div>
-                
-                                  <div class="dataColumnOne">
-                                    <p class="font-weight-bold mb-0 customerName">{{$pet->customers_fname}}</p>
-                                    <p class="text-muted mb-0 customerEmail">{{$pet->customers_email}}</p>
-                                  </div>
-                                </div>
-                              </a>
-                            </td>
-                            <td>{{$pet->customers_phone}}</td>
-                            <td>{{$pet->pet_type}}</td>
-                            {{-- <td>{{$pet->customers_bday}}</td> --}}
-                            <td>{{$pet['pet_name']}}</td>
-                            {{-- <td>
-                              <div class="badge badge-success badge-success-alt">Enabled</div>
-                            </td> --}}
-                            <td>
-                              {{-- <div class="dropdown">
-                                <button class="btn btn-sm btn-icon" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      <i class="bx bx-dots-horizontal-rounded" data-toggle="tooltip" data-placement="top"
-                                        title="Actions"></i>
-                                    </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                  <a class="dropdown-item" href="#"><i class="bx bxs-pencil mr-2"></i> Edit Profile</a>
-                                  <a class="dropdown-item text-danger" href="#"><i class="bx bxs-trash mr-2"></i> Remove</a>
-                                </div>
-                              </div> --}}
-                              {{ calculateWeeks($pet['pet_bday'])}}
-      
-                            </td>
-                            <td style = "display:none"> {{ $pet['pet_gender']}}
-                            </td>
-                            <td style = "display:none"> {{ calculateWeek($pet['pet_bday'])}}
-                            </td>
-                            <td style = "display:none"> {{ $pet->breed_name }}
-                            </td>
-                          
-                       </tr>
-                    @endforeach
-                  
-                    </tbody>
-                  </table>
+
+            <table id="myTable" class="table table-hover nowrap"  style="width:100%">
+              <thead>
+                <tr>
+                  <th>Client Name</th>
+                  <th>Phone Number</th>
+                  <th>Pet Type</th>
+                  <th>Pet Name</th>
+                  <th>Vaccination Period</th>
+                </tr>
+              </thead>
+              <tbody>
+              @foreach($pet_info as $pet)
+                <tr class="clickable-row" data-bs-toggle="modal" data-bs-target="#kt_modal_scrollable_2" >
+
+                      <td>
+                        <a href="#">
+                          <div class="d-flex align-items-center">
+                            <div class="avatar avatar-blue mr-3">EB</div>
+          
+                            <div class="dataColumnOne">
+                              <p class="font-weight-bold mb-0 customerName">{{$pet->customers_fname}}</p>
+                              <p class="text-muted mb-0 customerEmail">{{$pet->customers_email}}</p>
+                            </div>
+                          </div>
+                        </a>
+                      </td>
+                      <td>{{$pet->customers_phone}}</td>
+                      <td>Dog</td>
+                      {{-- <td>{{$pet->customers_bday}}</td> --}}
+                      <td>{{$pet['pet_name']}}</td>
+                      {{-- <td>
+                        <div class="badge badge-success badge-success-alt">Enabled</div>
+                      </td> --}}
+                      <td>
+                        {{-- <div class="dropdown">
+                          <button class="btn btn-sm btn-icon" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-dots-horizontal-rounded" data-toggle="tooltip" data-placement="top"
+                                  title="Actions"></i>
+                              </button>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                            <a class="dropdown-item" href="#"><i class="bx bxs-pencil mr-2"></i> Edit Profile</a>
+                            <a class="dropdown-item text-danger" href="#"><i class="bx bxs-trash mr-2"></i> Remove</a>
+                          </div>
+                        </div> --}}
+                        {{ calculateWeeks($pet['pet_bday'])}}
+                      </td>
+                 </tr>
+              @endforeach
+            
+              </tbody>
+            </table>
+
         </div>
             </div>
           </div>
@@ -550,6 +583,7 @@
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         
     <script src="{{asset('vendor_dashboard_script.js')}}"></script>
+
     
 <script>
   // Add a click event listener to the table rows
@@ -575,6 +609,7 @@
     });
   });
 </script>
+
 </body>
 
 </html>

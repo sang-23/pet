@@ -11,9 +11,15 @@ use App\Http\Controllers\generalController;
 use App\Http\Controllers\placeController;
 use App\Http\Controllers\PetData;
 use App\Http\Controllers\CustomerData;
+
 use App\Http\Controllers\PetmodController;
 
 use Carbon\Carbon;
+
+
+use App\Models\Templates;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,11 +30,14 @@ use Carbon\Carbon;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 Route::get('/', function () {
+
     return view('welcomenew');
 });
 Route::get('/form', function () {
     return view('form');
+
 });
 
 
@@ -58,6 +67,7 @@ Route::middleware('auth')->group(function () {
     Route::post('venderform', [AuthController::class, 'store'])->name('venderform.submit');
     
 });
+
 Route::get('profile', [ProfileController::class, 'edit'])->name('profile.edit');
 
 Route::put('profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -68,11 +78,18 @@ Route::put('profile', [ProfileController::class, 'update'])->name('profile.updat
 Route::get('/cities/{state}', 'placeController@getCities')->name('getCities');
 
 
-Route::get('vendor', [PetData::class,'index','calculateWeeks','calculateWee','notify']);
+
+
+Route::get('vendor', [PetData::class,'index','calculateWeeks','notify']);
+
 
 // Route::get('vendor', [PetData::class,'show']);
+// Route::get('vendor', [TemplateData::class,'showCarousel']);
   
 
 
+Auth::routes();
 
-Route::get('/pets/{id}', [PetmodController::class, 'showPetDetails']);
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+

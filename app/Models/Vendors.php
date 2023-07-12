@@ -16,5 +16,5 @@ class Vendors extends Model
         'vendors_email',
         'vendors_password',
     ];
-   
+
 }

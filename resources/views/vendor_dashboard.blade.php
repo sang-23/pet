@@ -22,6 +22,79 @@
 </head>
 
 <body>
+
+
+    <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+            <a class="navbar-brand" href="./vendorDash.html">
+                <img src="logo.jpg" alt="Logo" width="50" height="35" class="d-inline-block align-text-top">
+                PettyGraft
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <div class="vendorProfiletab d-flex mx-3">
+                            <div class="containerr mx-2">
+                                <div class="profile">
+                                    <img id="blah" src="DefaultProfilePic.jpg">
+                                    <div class="overlay">
+                                        <input id="imgInp" type="file">
+                                        <p>Change Picture</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 class="pt-1">Harshita</h3>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="fa-solid fa-bell fa-shake fa-lg"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                                <div id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3 BellScrollspy">
+                                    <a class="navbar-brand" href="#">Notification</a>
+                                    <ul class="nav nav-pills">
+                                        <div data-bs-spy="scroll" data-bs-target="#navbar-example2"
+                                            data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true"
+                                            class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+                                            <div class="notifi-item">
+                                                <div class="text d-flex">
+                                                    <p><b>Lorem ipsum</b></p>
+                                                    <p>@lorem ipsum dolor sit amet</p>
+                                                </div>
+                                            </div>
+                                            <div class="notifi-item">
+                                                <div class="text d-flex">
+                                                    <p><b>John Doe</b></p>
+                                                    <p>@lorem ipsum dolor sit amet</p>
+                                                </div>
+                                            </div>
+                                            <div class="notifi-item">
+                                                <div class="text d-flex">
+                                                    <p><b>Emad Ali</b></p>
+                                                    <p>@lorem ipsum dolor sit amet</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+     -->
+
 <header>
     <nav class="navbar  navbar-expand-lg bg-body-tertiary ">
         <div class="container-fluid d-flex justify-content-between">
@@ -61,12 +134,15 @@
                             </a>
                             <ul class="dropdown-menu">
 
+
                                 <nav id="navbar-example2" class="navbar p-2 bg-body-tertiary BellScrollspy">
                                     <a class="navbar-brand" href="#"><h4 class="notification_heading">Notification</h4></a>
+
                                     <ul class="nav nav-pills">
 
                                         <div data-bs-spy="scroll" data-bs-target="#navbar-example2"
                                             data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true"
+
                                             class="scrollspy-example bg-body-tertiary rounded-2" tabindex="0">
                                             <div class="notifi-item">
                                                 <div class="text">
@@ -74,6 +150,7 @@
                                                 <p><b>Pet name:</b>Lorem Ipsummm</p>
                                                 <p>Due this week</p>
                                                 
+
                                                 </div>
                                             </div>
 
@@ -105,22 +182,18 @@
     </div>
 </nav>
 </header>
-{{-- <section class="sec1">
+
+<section class="sec1">
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <!-- <div class="bg"></div> -->
             <img src="petBanner2.jpg" class="d-block w-100 caraousalBackgraoundImg" alt="...">
-            <div class="carousel-caption banner1TextClass">
-                <h1 class="campaignHeading">Boost Your Business with Targeted Campaigns!</h1>
-                
-                <h3 style="color: black">Let our Admin drive more customers to your pet store!</h3>
-              
-                <button type="button" class="btn btn-warning">  <h4 style="color: black">Run a Campaign Now!</h4></button>
-              </div>
+
           </div>
           <div class="carousel-item">
-            <img src="petBanner3.jpg" class="d-block w-100 caraousalBackgraoundImg" alt="...">
+            <img src="petBanner3.avif" class="d-block w-100 caraousalBackgraoundImg" alt="...">
+
           </div>
           <div class="carousel-item">
             <img src="Petbanner4.jpg" class="d-block w-100 caraousalBackgraoundImg" alt="...">
@@ -135,6 +208,7 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
+
 </section> --}}
 <section class="sec1">
     {{-- <div class="container">
@@ -173,14 +247,20 @@
 </section>
 
 
+
+</section>
+
+
 <section class="sec2">
     <div class="container py-5">
         <div class="row">
           <!-- <div class="col-md-8-sm-12"> -->
             <div class="addCustomerModal">
+
                 {{-- <div class="frame">
                 <button type="button" class="btn custom-btn btn-6" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Add Customer</button>
             </div> --}}
+
                 <div class="modal fade" id="exampleModal" class="tableModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
@@ -225,6 +305,7 @@
                   </div>
                 </div>
             </div>
+
          </div>
            <div class="row">
             <div class="col-lg-12-md-12-sm-12">
@@ -234,6 +315,7 @@
                     </div>
                 
             <table id="myTable" class="table table-hover nowrap"  style="width:100%">
+
               <thead>
                 <tr>
                   <th>Client Name</th>
@@ -283,7 +365,9 @@
                 </tr>
               </tbody>
             </table>
+
         </div>
+
             </div>
           </div>
         <!-- </div> -->
