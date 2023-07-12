@@ -11,9 +11,14 @@ use App\Http\Controllers\generalController;
 use App\Http\Controllers\placeController;
 use App\Http\Controllers\PetData;
 use App\Http\Controllers\CustomerData;
+
+use App\Http\Controllers\PetmodController;
+
 use Carbon\Carbon;
 
+
 use App\Models\Templates;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -73,6 +78,8 @@ Route::put('profile', [ProfileController::class, 'update'])->name('profile.updat
 Route::get('/cities/{state}', 'placeController@getCities')->name('getCities');
 
 
+
+
 Route::get('vendor', [PetData::class,'index','calculateWeeks','notify']);
 
 
@@ -84,4 +91,5 @@ Route::get('vendor', [PetData::class,'index','calculateWeeks','notify']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 

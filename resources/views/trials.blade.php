@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Vendor Dashboard</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -88,7 +90,17 @@
                                                   </div>
                                                 </div>
                                             </div>
-                                            
+
+
+                                            <div class="notifi-item">
+                                              <div class="card noti_card">
+                                                <div class="card-body p-2">
+                                                  <p class="card-title m-0"><b>Owner:</b>Lorem Ipsum</p>
+                                                  <p class="card-text m-0"><b>Pet:</b>Benjamin</p>
+                                                  <div class="dueWeek ">
+                                                    <p class="m-0">Due this week</p>
+                                                  </div>
+
                                                   
                                                   {{-- <button class="custom-btn btn-16">Read More</button> --}}
                                                 </div>
@@ -172,11 +184,13 @@
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   
   <div class="carousel-inner" data-bs-interval="10000">
+
       @foreach ($templates as $key => $template)
           <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
               <img src="{{ 'data:image/jpeg;base64,' . base64_encode($template->templates_image) }}" class="d-block w-100 CarouselPoster" alt="...">
           </div>
       @endforeach
+
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -263,12 +277,20 @@
                         </div>
                         <div class="modal-body cat_modal_body">
                             <div class="container container-main">
+
+                                <h1 class="modal_cat_name"></h1>
+=======
                                 <h1 class="modal_cat_name">Juliet</h1>
+
                                 <div class="row">
                                     <div class="col sm-4">
                                         <div class="card card-small">
                                             <div class="card-body">
+
+                                                <h5 class="card-title"></h5>
+=======
                                                 <h5 class="card-title">2 Years</h5>
+
                                                 <p class="card-text text-muted">Age</p>
                                             </div>
                                         </div>
@@ -276,7 +298,11 @@
                                     <div class="col sm-4">
                                         <div class="card card-small">
                                             <div class="card-body">
+
+                                                <h5 class="card-title"></h5>
+=======
                                                 <h5 class="card-title">Female</h5>
+
                                                 <p class="card-text text-muted">Sex</p>
                                             </div>
                                         </div>
@@ -297,13 +323,15 @@
                                         <hr>
                                         <p class="card-text">
                                         <p id="joincat" class="fs-5">Name:</p>
-                                        <h5 id="joincat">John Doe</h5>
+
+                                        <h5 class="joincat">John Doe</h5>
                                         <br>
                                         <p id="joincat" class="fs-5">Contact Number:</p>
-                                        <h5 id="joincat">9876543210</h5>
+                                        <h5 class="joincat"></h5>
                                         <br>
                                         <p id="joincat" class="fs-5">Email:</p>
-                                        <h5 id="joincat">abc@gmail.com</h5>
+                                        <h5 class="joincat">abc@gmail.com</h5>
+                                       
                                         </p>
                                     </div>
                                 </div>
@@ -339,6 +367,7 @@
 
             {{-- dog modal code start --}}
             <div class="modal fade" tabindex="-1" id="kt_modal_scrollable_3">
+
               <div class="modal-dialog modal-dialog-scrollable">
                   <div class="modal-content">
                       <div class="modal-title">
@@ -346,14 +375,24 @@
                           <img src="Colorful and Bright 3D Elements Printable Learning Module Schedule Planner (2).png"
                               class="img-fluid" alt="...">
                       </div>
+
+                    
                       <div class="modal-body dog_modal_body">
+                       
                           <div class="container container-main">
-                              <h1 class="modal_dog_name">Caesar</h1>
+                              <h1 class="modal_dog_name"></h1>
+
+
+
                               <div class="row">
                                   <div class="col sm-4">
                                       <div class="card card-small">
                                           <div class="card-body">
-                                              <h5 class="card-title">2 Years</h5>
+
+                                            <h5 class="card-title"></h5>
+
+                                            
+
                                               <p class="card-text text-muted">Age</p>
                                           </div>
                                       </div>
@@ -361,7 +400,10 @@
                                   <div class="col sm-4">
                                       <div class="card card-small">
                                           <div class="card-body">
-                                              <h5 class="card-title">Male</h5>
+                                              <h5 class="card-title"></h5>
+
+                                   
+
                                               <p class="card-text text-muted">Sex</p>
                                           </div>
                                       </div>
@@ -377,20 +419,29 @@
                               </div>
       
                               <div class="card card-profile-dog">
+
+                                
                                   <div class="card-body">
+                                   
+
+                                 
+
                                       <h4 class="card-title text-center">Parent Profile</h4>
                                       <hr>
                                       <p class="card-text">
                                       <p id="joindog" class="fs-5">Name:</p>
-                                      <h5 id="joindog">John Doe</h5>
+
+                                      <h5 id="joindog" class = "joindog"></h5>
                                       <br>
                                       <p id="joindog" class="fs-5">Contact Number:</p>
-                                      <h5 id="joindog">9876543210</h5>
+                                      <h5 id="joindog" class = "joindog" ></h5>
                                       <br>
                                       <p id="joindog" class="fs-5">Email:</p>
-                                      <h5 id="joindog">abc@gmail.com</h5>
+                                      <h5 id="joindog" class = "joindog"></h5>
                                       </p>
                                   </div>
+                                 
+
                               </div>
                               <div class="card card-profile-dog">
                                   <div class="card-body">
@@ -427,13 +478,17 @@
                       </div>
                   </div>
               </div>
+
+          
           </div>
             {{-- dog modal code end --}}
+           
 
 
 
 
                 <div class="table-responsive-sm">
+
             <table id="myTable" class="table table-hover nowrap"  style="width:100%">
               <thead>
                 <tr>
@@ -485,6 +540,7 @@
             
               </tbody>
             </table>
+
         </div>
             </div>
           </div>
@@ -527,6 +583,33 @@
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         
     <script src="{{asset('vendor_dashboard_script.js')}}"></script>
+
+    
+<script>
+  // Add a click event listener to the table rows
+  const rows = document.querySelectorAll('.clickable-row');
+  rows.forEach((row) => {
+    row.addEventListener('click', function() {
+      // Get the pet ID from the clicked row's data attribute
+      const petId = this.getAttribute('data-pet-id');
+
+      // Make an AJAX request to fetch the pet details from the server
+      fetch(`/pets/${petId}`)
+        .then(response => response.json())
+        .then(data => {
+          // Update the modal's content with the pet details
+          const modal = document.getElementById('kt_modal_scrollable_3');
+          modal.querySelector('.modal_dog_name').html = "rrr";
+          // modal.querySelector('.card-title').textContent = data.gender;
+          // modal.querySelector('#joindog').textContent = data.customer.name;
+          // modal.querySelector('#joindog').textContent = data.customer.phone;
+          // modal.querySelector('#joindog').textContent = data.customer.email;
+        })
+        .catch(error => console.error(error));
+    });
+  });
+</script>
+
 </body>
 
 </html>

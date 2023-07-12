@@ -5,12 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-
-=======
-use App\Http\Controllers\TemplateData;
-
-class Templates extends Model
+class country extends Model
 {
     use HasFactory;
-    protected $table='templates';
+    protected $table='country';
+    protected $primaryKey='countrys_id';
+
 }
